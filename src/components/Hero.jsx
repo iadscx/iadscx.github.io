@@ -10,14 +10,14 @@ const Hero = ({
     });
   };
   const openWhatsApp = () => {
-    const phone = '525547366385';
-    const message = encodeURIComponent("¡Hola Adam! Vi tu portafolio y me gustaría contactarte.");
+    const phone = '+525547366385';
+    const message = encodeURIComponent("¡Hola Irvin! Vi tu portafolio y me gustaría contactarte.");
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   };
   const openLinkedIn = () => {
-    window.open('https://www.linkedin.com', '_blank'); // Replace with actual LinkedIn profile
+    window.open('https://www.linkedin.com/in/iadscx', '_blank'); // Replace with actual LinkedIn profile
   };
-  const backgroundImageUrl = theme === 'light' ? 'https://horizons-cdn.hostinger.com/2da48547-5fc1-4257-9f4c-3df410f7d10c/b47893f588afd98f4fc537bef53cbcb4.png' : 'https://horizons-cdn.hostinger.com/2da48547-5fc1-4257-9f4c-3df410f7d10c/3efe6d2c5d5b6f90bceb0a755e031766.png';
+  const backgroundImageUrl = theme === 'light' ? 'https://olmeca.edu.mx/wp-content/uploads/2024/05/Ingenieria-Petrolera-Geologia-y-Geofisica-Avanzada-transformed.jpeg' : 'https://img.freepik.com/fotos-premium/mar-adentro-noche-industria-produccion-petroleo-gas-oleoducto_478515-4919.jpg';
   return <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-20">
        <div className="absolute inset-0 z-0">
          <motion.div key={theme} className="absolute inset-0 bg-cover bg-center" style={{

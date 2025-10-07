@@ -38,8 +38,8 @@ function App() {
   return (
     <>
       <Helmet>
-        <title>Adam Diaz - Portafolio Ingeniero de Datos</title>
-        <meta name="description" content="Portafolio de Adam Diaz, ingeniero petrolero en transición a ingeniería y análisis de datos." />
+        <title>Irvin Diaz - Portafolio Ingeniero y Analista de Datos</title>
+        <meta name="description" content="Portafolio de Irvin Adan Diaz Salinas, ingeniero petrolero en transición a ingeniería y análisis de datos." />
       </Helmet>
       
       <AnimatePresence>

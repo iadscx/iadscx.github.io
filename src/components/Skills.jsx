@@ -44,13 +44,13 @@ const Skills = () => {
     {
       icon: Wrench,
       title: 'Herramientas',
-      items: ['Jupyter', 'Git & GitHub', 'Excel Avanzado'],
+      items: ['Jupyter Notebook', 'Git', 'Excel'],
       color: 'from-amber-400 to-yellow-500'
     },
     {
       icon: Languages,
       title: 'Idiomas',
-      items: ['Español (Nativo)', 'Inglés (Profesional)'],
+      items: ['Español (Nativo)', 'Inglés (Avanzado)'],
       color: 'from-yellow-500 to-amber-400'
     }
   ];

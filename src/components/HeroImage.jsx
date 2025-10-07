@@ -4,8 +4,8 @@ const HeroImage = () => {
   return (
     <div className='flex justify-center items-center'>
       <img 
-        src='https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/119580eb-abd9-4191-b93a-f01938786700/public' 
-        alt='Hostinger Horizons' 
+        src='https://s2.sportstatics.com/relevo/www/multimedia/202410/22/media/cortadas/topuria-pesaje-ReTIZDcztU72hStqjv2MhVI-1200x648@Relevo.jpg' 
+        alt='No se que imagen sea' 
       />
     </div>
   );

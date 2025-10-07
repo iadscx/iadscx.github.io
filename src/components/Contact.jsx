@@ -57,9 +57,9 @@ const Contact = () => {
   };
   
   const socialLinks = {
-    email: 'mailto:tu.email@ejemplo.com',
-    linkedin: 'https://linkedin.com/in/tuperfil',
-    github: 'https://github.com/tuusuario'
+    email: 'iadscx@gmail.com',
+    linkedin: 'https://linkedin.com/in/iadscx',
+    github: 'https://github.com/iadscx'
   }
 
   return (

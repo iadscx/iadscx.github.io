@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto text-center text-[rgb(var(--text-secondary))]">
         <div className="flex justify-center gap-6 mb-4">
           <motion.a 
-            href="https://linkedin.com/in/tuperfil" 
+            href="https://linkedin.com/in/iadscx" 
             target="_blank" 
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2, color: '#0A66C2' }}
@@ -17,7 +17,7 @@ const Footer = () => {
             <Linkedin className="w-6 h-6" />
           </motion.a>
           <motion.a 
-            href="https://github.com/tuusuario"
+            href="https://github.com/iadscx"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2, color: '#EBEBF5' }}
@@ -27,7 +27,7 @@ const Footer = () => {
           </motion.a>
         </div>
         <p className="flex items-center justify-center gap-2 mb-2">
-          Diseñado y construido con <Heart className="w-4 h-4 text-red-500 fill-red-500" /> por Adam Diaz
+          Diseñado y construido con entusiasmo y <Heart className="w-4 h-4 text-red-500 fill-red-500" /> por Irvin Diaz
         </p>
         <p className="text-sm">
           © {new Date().getFullYear()} - Todos los derechos reservados

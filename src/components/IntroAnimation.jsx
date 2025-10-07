@@ -111,8 +111,8 @@ const IntroAnimation = ({ onFinish }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <p className="text-gradient-gold" style={{fontFamily: "'Playfair Display', serif"}}>Adam Diaz</p>
-            <p className="text-lg text-gray-400 mt-2">Mueve el mouse o haz clic para comenzar</p>
+            <p className="text-gradient-gold" style={{fontFamily: "'Playfair Display', serif"}}>Irvin Diaz</p>
+            <p className="text-lg text-gray-400 mt-2">Mueve el mouse o clickea para comenzar C:</p>
           </motion.div>
         )}
       </AnimatePresence>
