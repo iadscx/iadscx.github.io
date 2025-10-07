@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+  --background-start: 20 18 15; /* Dark brown/black */
+  --background-end: 10 8 5;   /* Deeper brown/black */
+  --text-primary: 230 220 210; /* Off-white */
+  --text-secondary: 160 150 140; /* Light brown/gray */
+  --accent-gold: 212 175 55; /* #D4AF37 */
+  --accent-copper: 184 115 51; /* #B87333 */
+  --glass-bg: 255 255 255;
+}
+
+html.dark {
+  --background-start: 20 18 15;
+  --background-end: 10 8 5;
+  --text-primary: 230 220 210;
+  --text-secondary: 160 150 140;
+  --glass-bg: 255 255 255;
+}
+
+html.light {
+  --background-start: 250 245 240; /* Very light beige */
+  --background-end: 230 225 220;   /* Light beige */
+  --text-primary: 40 30 20;     /* Dark brown text */
+  --text-secondary: 90 80 70;
+  --glass-bg: 0 0 0;
+}
+
+
+body {
+  @apply text-base;
+  background-color: rgb(var(--background-start));
+  color: rgb(var(--text-primary));
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.5s ease;
+  background-image: linear-gradient(135deg, rgb(var(--background-start)), rgb(var(--background-end)));
+}
+
+@layer utilities {
+  .text-gradient {
+     @apply bg-clip-text text-transparent bg-gradient-to-r from-amber-400 via-orange-500 to-yellow-500;
+  }
+  
+  .text-gradient-gold {
+     @apply bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 via-amber-500 to-orange-400;
+  }
+
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10;
+  }
+
+  html.light .glass-effect {
+    @apply bg-black/5 backdrop-blur-lg border border-black/10;
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+}
