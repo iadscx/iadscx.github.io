@@ -27,7 +27,7 @@ const Footer = () => {
           </motion.a>
         </div>
         <p className="flex items-center justify-center gap-2 mb-2">
-          Diseñado y construido con entusiasmo y <Heart className="w-4 h-4 text-red-500 fill-red-500" /> por Irvin Diaz
+          Diseñado y construido con entusiasmo y mucho amor para mi posita Taniiis te amo cieloo <Heart className="w-4 h-4 text-red-500 fill-red-500" /> por Irvin Diaz
         </p>
         <p className="text-sm">
           © {new Date().getFullYear()} - Todos los derechos reservados

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, Github, Send, Download } from 'lucide-react';
+import { Mail, Linkedin, Github, MessageCircle, Download } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import SectionTitle from '@/components/SectionTitle';
 
@@ -42,12 +42,10 @@ const Contact = () => {
   };
 
   const handleDownloadCV = () => {
-    toast({
-      title: "🚧 CV no disponible",
-      description: "¡Pronto podrás descargar mi CV desde aquí! Solicita esta función si es urgente.",
-      duration: 3000,
-    });
+    const cvUrl = 'https://drive.google.com/file/d/1365jl0Lrp6AdL41N5iWIc1dWa_5xXyyJ/view'; // URL al archivo PDF
+    window.location.href = cvUrl; // Esto descargará el archivo.
   };
+
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -57,7 +55,7 @@ const Contact = () => {
   };
   
   const socialLinks = {
-    email: 'iadscx@gmail.com',
+    email: 'mailto:iadscx@gmail.com',
     linkedin: 'https://linkedin.com/in/iadscx',
     github: 'https://github.com/iadscx'
   }
@@ -78,19 +76,19 @@ const Contact = () => {
             
             <div className="space-y-4">
               <button onClick={() => handleSocialClick(socialLinks.email)} className="w-full flex items-center gap-4 p-4 glass-effect rounded-xl hover:bg-white/10 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><Mail className="w-6 h-6" /></div>
+                <div className="w-12 h-12 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><Mail className="w-6 h-6" /></div>
                 <div className="text-left"><p className="font-semibold text-[rgb(var(--text-primary))]">Email</p><p className="text-sm text-[rgb(var(--text-secondary))]">Envíame un correo</p></div>
               </button>
               <button onClick={() => handleSocialClick(socialLinks.linkedin)} className="w-full flex items-center gap-4 p-4 glass-effect rounded-xl hover:bg-white/10 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-yellow-600 to-amber-500 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><Linkedin className="w-6 h-6" /></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-blue-700 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><Linkedin className="w-6 h-6" /></div>
                 <div className="text-left"><p className="font-semibold text-[rgb(var(--text-primary))]">LinkedIn</p><p className="text-sm text-[rgb(var(--text-secondary))]">Mi perfil profesional</p></div>
               </button>
               <button onClick={() => handleSocialClick(socialLinks.github)} className="w-full flex items-center gap-4 p-4 glass-effect rounded-xl hover:bg-white/10 transition-all duration-300 group">
-                <div className="w-12 h-12 bg-gradient-to-br from-gray-700 to-gray-900 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><Github className="w-6 h-6" /></div>
+                <div className="w-12 h-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300"><Github className="w-6 h-6" /></div>
                 <div className="text-left"><p className="font-semibold text-[rgb(var(--text-primary))]">GitHub</p><p className="text-sm text-[rgb(var(--text-secondary))]">Mis repositorios</p></div>
               </button>
             </div>
-             <motion.button
+            <motion.button
                 {...fadeInUp}
                 transition={{ delay: 0.4 }}
                 onClick={handleDownloadCV}
@@ -105,27 +103,6 @@ const Contact = () => {
             {...fadeInUp}
             transition={{ delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="glass-effect rounded-2xl p-8 space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-[rgb(var(--text-secondary))]">Nombre</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all duration-300 text-[rgb(var(--text-primary))]" placeholder="Tu nombre" required />
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-[rgb(var(--text-secondary))]">Email</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all duration-300 text-[rgb(var(--text-primary))]" placeholder="tu@email.com" required />
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-[rgb(var(--text-secondary))]">Mensaje</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="5" className="w-full px-4 py-3 bg-white/5 border-2 border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500 transition-all duration-300 resize-none text-[rgb(var(--text-primary))]" placeholder="Cuéntame sobre tu proyecto..." required />
-              </div>
-
-              <button type="submit" className="w-full px-6 py-4 bg-gradient-to-r from-amber-600 to-orange-700 text-white rounded-lg font-semibold text-lg hover:shadow-2xl hover:shadow-orange-500/50 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
-                <Send className="w-5 h-5" />
-                Enviar Mensaje
-              </button>
-            </form>
           </motion.div>
         </div>
       </div>

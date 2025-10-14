@@ -10,7 +10,7 @@ const WelcomeMessage = () => {
       transition={{ duration: 0.5, delay: 0.5 }}
     >
       Hola <span className='font-semibold text-purple-300'>Amigo</span> Amigo.
-        Bienvenido a mi portafolio. Soy Irvin, un Ingeniero de Datos con una pasión por transformar datos en información valiosa.
+        Bienvenido a mi portafolio. Soy Irvin, un ingeniero apasionado por el manejo y la traducción de datos en información valiosa.
     </motion.p>
   );
 };

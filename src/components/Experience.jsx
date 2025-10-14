@@ -6,20 +6,20 @@ import SectionTitle from '@/components/SectionTitle';
 const Experience = () => {
   const timeline = [
     {
-      icon: GraduationCap,
-      color: 'text-amber-400',
-      bgColor: 'bg-amber-400/10',
-      date: '2016 - 2021',
-      title: 'Ingeniería Petrolera, UNAM',
-      description: 'Graduado de la Facultad de Ingeniería de la Universidad Nacional Autónoma de México, con enfoque en yacimientos y producción.',
+        icon: Building,
+        color: 'text-orange-400',
+        bgColor: 'bg-orange-400/10',
+        date: '2024 - 2025',
+      title: 'Sernologic, Ing. Jr. de Procesos',
+      description: 'Gestioné y procesé datos de integridad de instalaciones petroleras de PEMEX, implementando pipelines y ETL automáticos con Python y MySQL, análisis estadísticos y dashboards en Power BI, mejorando la calidad de datos y la toma de decisiones mientras aseguraba trazabilidad en Git y almacenamiento en la nube.',
     },
     {
-      icon: Building,
-      color: 'text-orange-400',
-      bgColor: 'bg-orange-400/10',
-      date: '2021 - 2022',
-      title: 'Prácticas Profesionales en Campo',
-      description: 'Experiencia práctica en operaciones de campo, análisis de datos de perforación y optimización de producción.',
+      icon: HardHat,
+      color: 'text-yellow-400',
+      bgColor: 'bg-yellow-400/10',
+      date: '2023 - 2023',
+      title: 'Instituto de geofisica de la UNAM. Analista de Recursos Geotérmicos - Petroleros',
+      description: 'Limpié, estandaricé y administré datos termodinámicos en Excel y PostgreSQL, consolidando registros en una base de datos y automatizando pipelines de carga y validación, mejorando trazabilidad y reduciendo tiempos de procesamiento manual.',
     },
     {
       icon: HardHat,
@@ -29,8 +29,16 @@ const Experience = () => {
       title: 'Transición a Ingeniería de Datos',
       description: 'Desarrollo de proyectos personales y capacitación autodidacta en Python, SQL, y herramientas de BI para análisis de datos a gran escala.',
     },
+    {
+    icon: GraduationCap,
+    color: 'text-amber-400',
+    bgColor: 'bg-amber-400/10',
+    date: '2019 - 2024',
+    title: 'Ingeniería Petrolera, UNAM',
+    description: 'Graduado de la Facultad de Ingeniería de la Universidad Nacional Autónoma de México como Ingeniero Petrolero.',
+    },
   ];
-
+  
   const container = {
     hidden: { opacity: 0 },
     show: {

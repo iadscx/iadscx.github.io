@@ -6,12 +6,6 @@ import SectionTitle from '@/components/SectionTitle';
 const Skills = () => {
   const skills = [
     {
-      icon: Code,
-      title: 'Programación',
-      items: ['Python', 'Pandas', 'NumPy', 'Java'],
-      color: 'from-orange-500 to-amber-500'
-    },
-    {
       icon: Database,
       title: 'Bases de Datos (SQL)',
       items: ['PostgreSQL', 'MySQL', 'SQLServer', 'OracleDB', 'SQLite'],
@@ -20,31 +14,37 @@ const Skills = () => {
     {
       icon: Server,
       title: 'Bases de Datos (NoSQL)',
-      items: ['MongoDB', 'DynamoDB', 'Cassandra'],
+      items: ['MongoDB'],
       color: 'from-yellow-400 to-lime-500'
+    },
+    {
+      icon: Code,
+      title: 'Programación',
+      items: ['Python','Javascript','Pandas','SQLAlchemy','NumPy','c++','HTML','CSS'],
+      color: 'from-orange-500 to-amber-500'
     },
     {
       icon: Workflow,
       title: 'Procesos ETL/ELT',
-      items: ['Pentaho', 'Apache Airflow', 'Data Cleaning', 'Storytelling'],
+      items: ['Pyspark', 'Apache Airflow', 'Docker','Apache NiFi','Data Cleaning', 'Storytelling'],
       color: 'from-orange-400 to-red-500'
     },
     {
       icon: Cloud,
       title: 'Cloud & Big Data',
-      items: ['AWS', 'Azure', 'Google Dataflow', 'BigQuery'],
+      items: ['AWS S3', 'Google Dataflow', 'BigQuery', 'Snowflake'],
       color: 'from-sky-500 to-blue-600'
     },
     {
       icon: BarChart3,
       title: 'Visualización',
-      items: ['Matplotlib', 'Seaborn', 'Plotly', 'Power BI'],
+      items: ['Power BI','Matplotlib', 'Seaborn', 'Plotly'],
       color: 'from-yellow-600 to-orange-500'
     },
     {
       icon: Wrench,
       title: 'Herramientas',
-      items: ['Jupyter Notebook', 'Git', 'Excel'],
+      items: ['Jupyter Notebook', 'Git', 'Excel', 'DVC'],
       color: 'from-amber-400 to-yellow-500'
     },
     {
@@ -74,7 +74,7 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20 px-4 relative bg-black/10">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle title="Habilidades" subtitle="Tecnologías y herramientas que estoy dominando" />
+        <SectionTitle title="Habilidades" subtitle="Tecnologías y herramientas que empleo" />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map((skill, index) => (

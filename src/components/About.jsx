@@ -39,38 +39,6 @@ const About = () => {
             <p>Mi objetivo actual es dar el salto hacia nuevas industrias donde pueda seguir aplicando y expandiendo mis conocimientos en el diseño, manejo, procesamiento y análisis de datos.</p>
           </motion.div>
         </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          <motion.div {...fadeInUp} transition={{
-          delay: 0.4
-        }} className="glass-effect rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 group">
-            <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-orange-500/30 group-hover:scale-110 transition-transform duration-300">
-              <Sliders className="w-8 h-8" />
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-[rgb(var(--text-primary))]">Experiencia</h3>
-            <p className="text-[rgb(var(--text-secondary))]">Sólida base en análisis técnico y resolución de problemas de la ingeniería petrolera.</p>
-          </motion.div>
-
-          <motion.div {...fadeInUp} transition={{
-          delay: 0.5
-        }} className="glass-effect rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 group">
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform duration-300">
-              <Waypoints className="w-8 h-8" />
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-[rgb(var(--text-primary))]">Transición</h3>
-            <p className="text-[rgb(var(--text-secondary))]">En constante formación en tecnologías de datos: Python, SQL, MongoDB, y herramientas de análisis.</p>
-          </motion.div>
-
-          <motion.div {...fadeInUp} transition={{
-          delay: 0.6
-        }} className="glass-effect rounded-2xl p-6 hover:-translate-y-2 transition-transform duration-300 group">
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-5 shadow-lg shadow-red-500/30 group-hover:scale-110 transition-transform duration-300">
-              <Target className="w-8 h-8" />
-            </div>
-            <h3 className="text-xl font-bold mb-2 text-[rgb(var(--text-primary))]">Objetivo</h3>
-            <p className="text-[rgb(var(--text-secondary))]">Convertirme en un experto en ingeniería de datos y contribuir a proyectos innovadores.</p>
-          </motion.div>
-        </div>
       </div>
     </section>;
 };

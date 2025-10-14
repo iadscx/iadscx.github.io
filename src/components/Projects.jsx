@@ -8,6 +8,42 @@ const Projects = () => {
   const { toast } = useToast();
 
   const projects = [
+        {
+      title: 'Análisis de Ventas Minoristas (Retail Sales Analytics)',
+      description: 'Exploración y análisis de datos históricos de ventas para identificar patrones, productos más vendidos, desempeño por tienda y estacionalidad. Optimizando decisiones comerciales basadas en evidencia.',
+      tags: ['Python', 'Pandas', 'Matplotlib', 'Seaborn','SQLite','Visual BI', 'Excel'],
+      gradient: 'from-amber-500 to-orange-600',
+    },
+    {
+      title: 'Análisis de COVID-19 global',
+      description: 'Estudio del impacto de la pandemia a nivel mundial. Donde se realizó limpieza avanzada, tratamiento de datos faltantes, creación de indicadores y visualizaciones para entender patrones temporales y geográficos.',
+      tags: ['SQL','Pandas','NumPy','Plotly','Seaborn','Excel','Power BI'],
+      gradient: 'from-yellow-500 to-amber-500',
+    },
+    {
+      title: 'Análisis de desempeño de pilotos en la Fórmula 1',
+      description: 'Evaluación del rendimiento de pilotos y escuderías usando datos históricos de competencias. Se analizan métricas de desempeño, nacionalidad, posición promedio y patrones por temporada.',
+      tags: ['Python','Pandas','SQLAlchemy','SQLite'],
+      gradient: 'from-orange-500 to-red-600',
+    },
+    {
+      title: 'Marketing & Sales Data Pipeline',
+      description: 'Diseño de un pipeline completo para integrar datos de ventas y campañas publicitarias. Se implementa un flujo ETL automatizado que limpia, transforma y carga datos en la nube.',
+      tags: ['Apache NiFi', 'Apache Airflow', 'PostgreSQL', 'Snowflake','Python'],
+      gradient: 'from-amber-500 to-orange-600',
+    },
+    {
+      title: 'Fortnite Game Analytics Pipeline',
+      description: 'Construcción de un pipeline de big data que recopila y analiza estadísticas de jugadores de Fortnite desde una API. Incluye procesamiento distribuido y almacenamiento escalable en la nube.',
+      tags: ['PySpark', 'Apache Airflow', 'AWS S3','BigQuery','Python', 'Python'],
+      gradient: 'from-yellow-500 to-amber-500',
+    },
+    {
+      title: 'Retail Hybrid Data Pipeline',
+      description: 'Implementación de una arquitectura híbrida (local + nube) que combina bases de datos relacionales y no relacionales para manejar información de ventas y comportamiento del cliente.',
+      tags: ['MongoDB','PySpark','Python', 'PostgreSQL', 'Apache Airflow'],
+      gradient: 'from-orange-500 to-red-600',
+    },
     {
       title: 'Análisis de Producción Petrolera',
       description: 'Análisis de datos de producción de pozos para optimizar rendimiento, usando Python y Pandas.',
@@ -46,7 +82,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 px-4 relative">
       <div className="max-w-7xl mx-auto">
-        <SectionTitle title="Proyectos" subtitle="Algunos de mis trabajos en ingeniería y análisis de datos" />
+        <SectionTitle title="Proyectos" subtitle="Algunos de mis trabajos realizados en ingeniería y análisis de datos" />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
@@ -63,7 +99,7 @@ const Projects = () => {
               
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2 text-[rgb(var(--text-primary))]">{project.title}</h3>
-                <p className="text-[rgb(var(--text-secondary))] mb-4 text-sm h-16">{project.description}</p>
+                <p className="text-[rgb(var(--text-secondary))] mb-4 text-sm">{project.description}</p>
                 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag, i) => (
