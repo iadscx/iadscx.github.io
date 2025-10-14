@@ -1,44 +1,49 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Building, GraduationCap, HardHat } from 'lucide-react';
+import { Building, GraduationCap, HardHat, Search } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
 
 const Experience = () => {
   const timeline = [
     {
-        icon: Building,
-        color: 'text-orange-400',
-        bgColor: 'bg-orange-400/10',
-        date: '2024 - 2025',
-      title: 'Sernologic, Ing. Jr. de Procesos',
-      description: 'Gestioné y procesé datos de integridad de instalaciones petroleras de PEMEX, implementando pipelines y ETL automáticos con Python y MySQL, análisis estadísticos y dashboards en Power BI, mejorando la calidad de datos y la toma de decisiones mientras aseguraba trazabilidad en Git y almacenamiento en la nube.',
-    },
+      icon: Building,
+      color: 'text-orange-600',
+      bgColor: 'bg-orange-500/10',
+      date: '2024 - 2025',
+      title: 'Sernologic. Ingeniero Jr. de Procesos',
+      description:
+        'Gestioné y procesé datos de integridad de instalaciones petroleras de PEMEX, implementando pipelines y ETL automáticos con Python y SQLServer, análisis estadísticos y dashboards en Power BI, mejorando la calidad de datos y la toma de decisiones mientras aseguraba trazabilidad en Git y almacenamiento en la nube.',
+      tags: ['Python', 'SQLServer','AWS S3', 'Google Cloud Storage','ETL','Excel', 'Power BI', 'Git'],
+      },
     {
       icon: HardHat,
-      color: 'text-yellow-400',
-      bgColor: 'bg-yellow-400/10',
+      color: 'text-orange-400',
+      bgColor: 'bg-orange-500/10',
       date: '2023 - 2023',
       title: 'Instituto de geofisica de la UNAM. Analista de Recursos Geotérmicos - Petroleros',
-      description: 'Limpié, estandaricé y administré datos termodinámicos en Excel y PostgreSQL, consolidando registros en una base de datos y automatizando pipelines de carga y validación, mejorando trazabilidad y reduciendo tiempos de procesamiento manual.',
+      description:
+        'Limpié, estandaricé y administré datos termodinámicos en Excel y PostgreSQL, consolidando registros en una base de datos y automatizando pipelines de carga y validación, mejorando trazabilidad y reduciendo tiempos de procesamiento manual.',
+      tags: ['Python','Excel', 'PsotgreSQL']
     },
     {
-      icon: HardHat,
-      color: 'text-yellow-400',
-      bgColor: 'bg-yellow-400/10',
+      icon: Search,
+      color: 'text-orange-400',
+      bgColor: 'bg-orange-600/10',
       date: '2023 - Presente',
       title: 'Transición a Ingeniería de Datos',
-      description: 'Desarrollo de proyectos personales y capacitación autodidacta en Python, SQL, y herramientas de BI para análisis de datos a gran escala.',
+      description:
+        'Desarrollo de proyectos personales y capacitación autodidacta en Python, SQL, y herramientas de BI para análisis de datos a gran escala.',
     },
     {
-    icon: GraduationCap,
-    color: 'text-amber-400',
-    bgColor: 'bg-amber-400/10',
-    date: '2019 - 2024',
-    title: 'Ingeniería Petrolera, UNAM',
-    description: 'Graduado de la Facultad de Ingeniería de la Universidad Nacional Autónoma de México como Ingeniero Petrolero.',
+      icon: GraduationCap,
+      color: 'text-amber-400',
+      bgColor: 'bg-amber-400/10',
+      date: '2019 - 2024',
+      title: 'Ingeniería Petrolera. UNAM',
+      description: 'Graduado de la Facultad de Ingeniería de la Universidad Nacional Autónoma de México como Ingeniero Petrolero.',
     },
   ];
-  
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -58,8 +63,8 @@ const Experience = () => {
     <section id="experience" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
         <SectionTitle title="Educación y Experiencia" subtitle="Mi trayectoria profesional y académica" />
-        
-        <motion.div 
+
+        <motion.div
           className="relative"
           variants={container}
           initial="hidden"
@@ -68,7 +73,7 @@ const Experience = () => {
         >
           {/* Timeline Line */}
           <div className="absolute left-6 md:left-1/2 top-0 h-full w-0.5 bg-white/20 -translate-x-1/2"></div>
-          
+
           {timeline.map((event, index) => {
             const Icon = event.icon;
             const isOdd = index % 2 !== 0;
@@ -81,12 +86,24 @@ const Experience = () => {
                       <p className={`text-sm font-semibold mb-1 ${event.color}`}>{event.date}</p>
                       <h3 className="text-xl font-bold mb-2 text-[rgb(var(--text-primary))]">{event.title}</h3>
                       <p className="text-[rgb(var(--text-secondary))] text-base">{event.description}</p>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {event.tags && event.tags.map((tag, index) => (
+                          <span
+                            key={index}
+                            className="px-3 py-1 bg-white/10 text-xs rounded-full text-[rgb(var(--text-secondary))]"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
-                  
+
                   {/* Icon */}
-                  <div className="absolute left-6 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <div className={`w-12 h-12 rounded-full ${event.bgColor} flex items-center justify-center ring-4 ring-[rgb(var(--background-start))]`}>
+                  <div className="absolute left-0 md:left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-x-0 md:translate-y-0">
+                    <div
+                      className={`w-12 h-12 rounded-full ${event.bgColor} flex items-center justify-center ring-4 ring-[rgb(var(--background-start))]`}
+                    >
                       <Icon className={`w-6 h-6 ${event.color}`} />
                     </div>
                   </div>

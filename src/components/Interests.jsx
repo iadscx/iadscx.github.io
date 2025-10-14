@@ -32,8 +32,8 @@ const Interests = () => {
         {
             title: "Análisis de calidad de datos",
             tools: [
-                "SQLServer", "OracleDB", "SQLite"
-            ]
+                "SQLServer",  "SQLite"
+            ]//"OracleDB",
         },
         {
             title: "Optimización de procesos basados en información",

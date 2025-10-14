@@ -26,8 +26,8 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <motion.div {...fadeInUp} transition={{
           delay: 0.2
-        }} className="w-full h-auto">
-            <img alt="Ingeniero trabajando con visualizaciones de datos en una pantalla" className="w-full h-auto object-cover rounded-2xl shadow-2xl shadow-orange-900/30" src="https://images.unsplash.com/photo-1571677246347-5040036b95cc" />
+        }} className="w-full h-full">
+            <img alt="Ingeniero trabajando con visualizaciones de datos en una pantalla" className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-orange-900/40" src="/images/IDz.jpg" />
           </motion.div>
 
           <motion.div {...fadeInUp} transition={{

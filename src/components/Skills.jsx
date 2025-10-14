@@ -8,7 +8,7 @@ const Skills = () => {
     {
       icon: Database,
       title: 'Bases de Datos (SQL)',
-      items: ['PostgreSQL', 'MySQL', 'SQLServer', 'OracleDB', 'SQLite'],
+      items: ['PostgreSQL', 'MySQL', 'SQLServer',  'SQLite'],///'OracleDB',
       color: 'from-amber-500 to-yellow-600'
     },
     {

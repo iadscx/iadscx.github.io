@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react'; 
 import { motion, AnimatePresence } from 'framer-motion';
 
 const OilDrop = ({ x, onComplete }) => (
   <motion.div
     className="absolute w-2 h-4 bg-gradient-to-b from-yellow-700 to-black rounded-full"
-    style={{ left: x, bottom: '25%', originY: 1 }}
+    style={{ left: x, bottom: '80%', originY: 1 }}
     initial={{ scaleY: 0, opacity: 0 }}
     animate={{
       y: [0, -10, -15, -100],
@@ -16,10 +16,25 @@ const OilDrop = ({ x, onComplete }) => (
   />
 );
 
-// Torre de perforación (sin ancla)
+const OilDrop2 = ({ x, onComplete }) => (
+  <motion.div
+    className="absolute w-2 h-4 bg-gradient-to-b from-yellow-700 to-black rounded-full"
+    style={{ left: x, bottom: '50%', originY: 1 }}
+    initial={{ scaleY: 0, opacity: 0 }}
+    animate={{
+      y: [0, -10, -15, -100],
+      scaleY: [0, 1, 0.8, 0.5],
+      opacity: [0, 1, 1, 0],
+    }}
+    transition={{ duration: 1.2, ease: 'easeOut', times: [0, 0.2, 0.4, 1] }}
+    onAnimationComplete={onComplete}
+  />
+);
+
+// Torre de perforación con imagen
 const DrillingRig = ({ x }) => (
   <motion.div
-    className="absolute bottom-0 w-48 h-96 text-gray-400"
+    className="absolute bottom-1 w-64 h-112" // Tamaño aumentado
     style={{ left: x }}
     initial={{ y: 200, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
@@ -27,26 +42,23 @@ const DrillingRig = ({ x }) => (
     transition={{ duration: 0.8, ease: 'easeOut' }}
   >
     <div className="relative w-full h-full">
-      {/* Base de la torre */}
-      <div className="absolute bottom-0 w-full h-8 bg-gray-700"></div>
-      {/* Estructura de la torre */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-8 h-72 bg-gray-600"></div>
-      {/* Plataformas */}
-      <div className="absolute bottom-24 left-1/2 -translate-x-1/2 w-12 h-2 bg-gray-500"></div>
-      <div className="absolute bottom-40 left-1/2 -translate-x-1/2 w-16 h-2 bg-gray-500"></div>
-      <div className="absolute bottom-56 left-1/2 -translate-x-1/2 w-20 h-2 bg-gray-500"></div>
-      <div className="absolute bottom-72 left-1/2 -translate-x-1/2 w-24 h-2 bg-gray-500"></div>
-      {/* Vigas diagonales */}
-      <div className="absolute bottom-60 left-6 w-2 h-12 bg-gray-600 transform rotate-45"></div>
-      <div className="absolute bottom-60 right-6 w-2 h-12 bg-gray-600 transform rotate-135"></div>
+      {/* Usamos la imagen de la torre de perforación */}
+      <img
+        src="/images/TorrePerf.png"
+        alt="Torre Petrolera"
+        className="w-full h-full object-contain"
+        style={{
+          filter: 'brightness(1.5) grayscale(50%)', // Filtro de brillo y desaturación
+        }}
+      />
     </div>
   </motion.div>
 );
 
-// Barco perforador (sin ancla)
+// Barco perforador con imagen
 const DrillingShip = ({ x }) => (
   <motion.div
-    className="absolute bottom-0 w-64 h-48 text-gray-400"
+    className="absolute bottom-0 w-160 h-128" // Tamaño aumentado
     style={{ left: x }}
     initial={{ y: 200, opacity: 0 }}
     animate={{ y: 0, opacity: 1 }}
@@ -54,15 +66,15 @@ const DrillingShip = ({ x }) => (
     transition={{ duration: 0.8, ease: 'easeOut' }}
   >
     <div className="relative w-full h-full">
-      {/* Casco del barco perforador */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64 h-16 bg-gray-600 rounded-t-full"></div>
-      {/* Plataforma */}
-      <div className="absolute bottom-16 left-1/2 -translate-x-1/2 w-48 h-4 bg-gray-800"></div>
-      {/* Torre */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-8 h-32 bg-gray-600"></div>
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 w-8 h-32 bg-gray-600 opacity-50"></div>
-      {/* Plataforma superior */}
-      <div className="absolute bottom-40 left-1/2 -translate-x-1/2 w-16 h-2 bg-gray-500"></div>
+      {/* Usamos la imagen del barco perforador */}
+      <img
+        src="/images/PlataformaPerf.png"
+        alt="Barco Perforador"
+        className="w-full h-full object-contain"
+        style={{
+          filter: 'brightness(3.5) grayscale(90%)', // Filtro de brillo y desaturación
+        }}
+      />
     </div>
   </motion.div>
 );
@@ -78,14 +90,16 @@ const IntroAnimation = ({ onFinish }) => {
     setStart(true);
     setShowText(false);
 
-    setRigs([{ id: 1, x: '15%' }, { id: 2, x: '65%' }]);
+    // Inicializar las plataformas (torres o barcos)
+    setRigs([{ id: 1, x: '15%' }, { id: 2, x: '35%' }]);
 
     setTimeout(() => {
       let dropCount = 0;
       const interval = setInterval(() => {
         if (dropCount < 40) {
-          createDrop('22%');
-          createDrop('72%');
+          // Crear gotas de petróleo en las posiciones de las plataformas
+          createDrop('23%');
+          createDrop('54%');
           dropCount += 2;
         } else {
           clearInterval(interval);
@@ -94,21 +108,23 @@ const IntroAnimation = ({ onFinish }) => {
     }, 500);
 
     setTimeout(() => {
-      setRigs([]);
+      setRigs([]); // Eliminar plataformas después de 3 segundos
     }, 3000);
-    setTimeout(onFinish, 4000);
+    setTimeout(onFinish, 4000); // Finaliza la animación después de 4 segundos
   }, [start, onFinish]);
 
+  // Crear gotas de petróleo en posiciones específicas
   const createDrop = (x) => {
     setDrops((prev) => [
       ...prev,
       {
         id: Date.now() + Math.random(),
-        x: `calc(${x} + ${Math.random() * 2 - 1}rem)`,
+        x: `calc(${x} + ${Math.random() * 2 - 1}rem)`, // Le damos un pequeño desplazamiento aleatorio
       },
     ]);
   };
 
+  // Eliminar gotas de petróleo cuando la animación de caída termina
   const removeDrop = (id) => {
     setDrops((prev) => prev.filter((d) => d.id !== id));
   };
@@ -151,6 +167,7 @@ const IntroAnimation = ({ onFinish }) => {
         {rigs.map((rig) => rig.id === 1 ? <DrillingRig key={rig.id} x={rig.x} /> : <DrillingShip key={rig.id} x={rig.x} />)}
       </AnimatePresence>
 
+      {/* Renderizar las gotas de petróleo */}
       {drops.map((drop) => (
         <OilDrop key={drop.id} {...drop} onComplete={() => removeDrop(drop.id)} />
       ))}
