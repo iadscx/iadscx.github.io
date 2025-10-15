@@ -41,11 +41,8 @@ const Contact = () => {
     }
   };
 
-  const handleDownloadCV = () => {
-    const cvUrl = '/documents/CV Irvin Diaz.pdf'; // URL al archivo PDF
-    window.location.href = cvUrl; // Esto descargará el archivo.
-  };
-
+  // 🗑️ NOTA: La función handleDownloadCV ha sido eliminada, 
+  // ya que la descarga ahora se maneja directamente con la etiqueta <a>.
 
   const fadeInUp = {
     initial: { opacity: 0, y: 60 },
@@ -91,15 +88,18 @@ const Contact = () => {
                 <div className="text-left"><p className="font-semibold text-[rgb(var(--text-primary))]">GitHub</p><p className="text-sm text-[rgb(var(--text-secondary))]">Mis repositorios</p></div>
               </button>
             </div>
-            <motion.button
+            
+            {/* 🎯 CAMBIO CLAVE: Reemplazamos <motion.button> por <motion.a> y añadimos download/href */}
+            <motion.a 
                 {...fadeInUp}
                 transition={{ delay: 0.4 }}
-                onClick={handleDownloadCV}
+                href="/documents/CV Irvin Diaz.pdf" // ⬅️ Ruta del archivo en la carpeta public
+                download="CV Irvin Diaz.pdf" // ⬅️ Fuerza la descarga
                 className="w-full mt-6 px-8 py-4 bg-gradient-to-r from-amber-500 to-orange-600 text-white rounded-lg font-semibold text-lg hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-3"
               >
                 <Download className="w-6 h-6" />
                 Descargar CV
-              </motion.button>
+            </motion.a>
           </motion.div>
 
           {/* Columna 2: Imagen Datoz.jpg */}
