@@ -42,7 +42,7 @@ const Contact = () => {
   };
 
   const handleDownloadCV = () => {
-    const cvUrl = 'https://github.com/iadscx/Private/raw/main/CV%20Irvin%20Diaz.pdf'; // URL al archivo PDF
+    const cvUrl = '/documents/CV Irvin Diaz.pdf'; // URL al archivo PDF
     window.location.href = cvUrl; // Esto descargará el archivo.
   };
 
