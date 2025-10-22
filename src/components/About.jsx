@@ -27,7 +27,7 @@ const About = () => {
           <motion.div {...fadeInUp} transition={{
           delay: 0.2
         }} className="w-full h-full">
-            <img alt="Ingeniero trabajando con visualizaciones de datos en una pantalla" className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-orange-900/40" src="/images/IDz.jpg" />
+            <img alt="Irivn Diaz vestido de Ingeniero Petrolero" className="w-full h-full object-cover rounded-2xl shadow-2xl shadow-orange-900/40" src="/images/IDz.jpg" />
           </motion.div>
 
           <motion.div {...fadeInUp} transition={{
